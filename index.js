@@ -136,6 +136,42 @@ bot.on('message', msg=>{
 
                 break;
         }   }
-    });
+        let args = message.content.substring(PREFIX.length).split(" ");
 
-    bot.login(process.env.token);
+        switch (args[0]) {
+            case 'youtube':
+                message.reply('Raweq auf YouTube : https://www.youtube.com/channel/UC0AmoR_u5UVHaJF_AMccZHg');
+                break;
+            case 'bewerben':
+                message.reply('Hier kannst du dich bewerben: https://forms.gle/5JEdANX2RHVXHQDc7');
+            case 'verify':
+                message.reply('Hier kannst du dich verifizieren: https://forms.gle/Q1dbektjhLM6um7Q7');
+                break;
+            case 'info':
+                if (args[1] === 'version') {
+                    message.channel.send('Version ' + version + ' by Raweq');
+                } else {
+                    message.reply('ungültiger Befehl')
+                }
+                break;
+            case 'clear':
+                if (!args[1]) return message.reply('Ups! Es ist ein Fehler unterlaufen!(#clear [nummer]')
+                message.channel.bulkDelete(args[1]);
+                break;          
+    };
+
+const AUTOROLEID = "746848139239227472"
+
+    bot.on('guildMemberAdd', (memb) => {
+
+    var role = memb.guild.roles.find(r => r.id == AUTOROLEID)
+
+    if (role) {
+        memb.addRole(role).then(() =>{
+            memb.send('', new Discord.RichEmbed().setColor(0x29B6F6).setDescription(`Willkommen im SeeS Server c: Du hast automatisch den ${role.name} Rang bekommen!`))
+        })
+    }
+
+})
+
+    bot.login(process.env.token)};
