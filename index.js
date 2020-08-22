@@ -136,6 +136,7 @@ bot.on('message', msg=>{
 
                 break;
         }   }
+        let args = message.content.substring(PREFIX.length).split(" ");
 
         switch (args[0]) {
             case 'youtube':
@@ -153,18 +154,5 @@ bot.on('message', msg=>{
                 break;      
     };
 
-const AUTOROLEID = "746848139239227472"
-
-    bot.on('guildMemberAdd', (memb) => {
-
-    var role = memb.guild.roles.find(r => r.id == AUTOROLEID)
-
-    if (role) {
-        memb.addRole(role).then(() =>{
-            memb.send('', new Discord.RichEmbed().setColor(0x29B6F6).setDescription(`Willkommen im SeeS Server c: Du hast automatisch den ${role.name} Rang bekommen!`))
-        })
-    }
-
-})
 
     bot.login(process.env.token)})
