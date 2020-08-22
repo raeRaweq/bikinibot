@@ -137,21 +137,6 @@ bot.on('message', msg=>{
                 break;
         }   }
 
-        switch (args[0]) {
-            case 'youtube':
-                message.reply('Raweq auf YouTube : https://www.youtube.com/channel/UC0AmoR_u5UVHaJF_AMccZHg');
-                break;
-            case 'twitch':
-                message.reply('Raweq auf Twitch : https://www.twitch.tv/Raweq__/');
-                break;
-            case 'info':
-                if (args[1] === 'version') {
-                    message.channel.send('Version ' + version + ' by Raweq');
-                } else {
-                    message.reply('ungültiger Befehl')
-                }
-                break;      
-    };
 
 
     bot.login(process.env.token)})
