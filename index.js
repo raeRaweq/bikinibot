@@ -136,7 +136,6 @@ bot.on('message', msg=>{
 
                 break;
         }   }
+        let args = message.content.substring(PREFIX.length).split(" ");
 
-
-
-    bot.login(process.env.token)})
+    bot.login(process.env.token)});
