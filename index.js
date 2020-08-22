@@ -136,7 +136,7 @@ bot.on('message', msg=>{
 
                 break;
         }   }
-        let args = message.content.substring(PREFIX.length).split(" ");
+        let args = message.content.substring(PREFIX.length).split("_");
 
         switch (args[0]) {
             case 'youtube':
