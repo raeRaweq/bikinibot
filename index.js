@@ -136,16 +136,14 @@ bot.on('message', msg=>{
 
                 break;
         }   }
-        let args = message.content.substring(PREFIX.length).split("_");
+        let args = message.content.substring(PREFIX.length).split(" ");
 
         switch (args[0]) {
             case 'youtube':
                 message.reply('Raweq auf YouTube : https://www.youtube.com/channel/UC0AmoR_u5UVHaJF_AMccZHg');
                 break;
-            case 'bewerben':
-                message.reply('Hier kannst du dich bewerben: https://forms.gle/5JEdANX2RHVXHQDc7');
-            case 'verify':
-                message.reply('Hier kannst du dich verifizieren: https://forms.gle/Q1dbektjhLM6um7Q7');
+            case 'twitch':
+                message.reply('Raweq auf Twitch : https://www.twitch.tv/Raweq__/');
                 break;
             case 'info':
                 if (args[1] === 'version') {
@@ -153,11 +151,7 @@ bot.on('message', msg=>{
                 } else {
                     message.reply('ungültiger Befehl')
                 }
-                break;
-            case 'clear':
-                if (!args[1]) return message.reply('Ups! Es ist ein Fehler unterlaufen!(#clear [nummer]')
-                message.channel.bulkDelete(args[1]);
-                break;          
+                break;      
     };
 
 const AUTOROLEID = "746848139239227472"
@@ -174,4 +168,4 @@ const AUTOROLEID = "746848139239227472"
 
 })
 
-    bot.login(process.env.token)};
+    bot.login(process.env.token)})
