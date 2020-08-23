@@ -48,7 +48,7 @@ bot.on('ready', () =>{
 
 bot.on('message', msg=>{
 
-    let args = msg.content.substring(PREFIX.length).split(" ");
+
     let channel = msg.channel;
 
     switch(args[0].toUpperCase()){
